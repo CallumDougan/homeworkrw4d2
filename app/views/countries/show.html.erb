@@ -1,1 +1,13 @@
 <h1><%= @country.name %></h1>
+<%= link_to('Edit entry', edit_country_path(@country)) %>
+<%= link_to('Delete entry', country_path(@country), method:'delete', data: {confirm: 'Delete?'}) %>
+<br><br>
+<%= image_tag(@country.flag, alt:'flag missing!', width:300) %>
+<br><br>
+<b>Total area: <%=@country.size %> km<sup>2</sup></b>
+<br><br>
+<b>Total population: <%=@country.population %></b>
+<br><br>
+<b>Main language: <%=@country.language %></b>
+<br><br>
+<b>Travel advisory: <%=@country.travel_advice %></b>

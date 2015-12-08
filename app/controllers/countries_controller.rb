@@ -12,8 +12,22 @@ class CountriesController < ApplicationController
     country_finder
   end
 
+  def edit
+    country_finder
+  end
+
+  def update
+    country_finder.update(country_params)
+    redirect_to(countries_path)
+  end
+
   def create
     Country.create(country_params)
+    redirect_to(countries_path)
+  end
+
+  def delete
+    country_finder.destroy
     redirect_to(countries_path)
   end
 
