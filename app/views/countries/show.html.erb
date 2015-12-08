@@ -2,7 +2,7 @@
 <%= link_to('Edit entry', edit_country_path(@country)) %>
 <%= link_to('Delete entry', country_path(@country), method:'delete', data: {confirm: 'Delete?'}) %>
 <br><br>
-<%= image_tag(@country.flag, alt:'flag missing!', width:300) %>
+<%= image_tag("https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_#{@country.name}.svg/1599px-Flag_of_#{@country.name}.svg.png", alt:'flag missing!', width:300) %>
 <br><br>
 <b>Total area: <%=@country.size %> km<sup>2</sup></b>
 <br><br>
@@ -10,4 +10,4 @@
 <br><br>
 <b>Main language: <%=@country.language %></b>
 <br><br>
-<b>Travel advisory: <%=@country.travel_advice %></b>
+<b><%= link_to('UK Travel Advisory', "https://www.gov.uk/foreign-travel-advice/#{@country.name.downcase}") %></b>

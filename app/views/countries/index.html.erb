@@ -1,6 +1,6 @@
 <h1>Welcome to the non-suspicious CIA Factbook</h1>
 <% @countries.each do |country| %>
-<%= image_tag(country.flag, alt: 'flag missing!', width:300) %>
-<br>
+<%= image_tag(country.flag, alt: 'flag missing!', width:75) %>
+<br><br>
 <%= link_to("Show #{country.name}", country_path(country)) %>
 <% end %>
